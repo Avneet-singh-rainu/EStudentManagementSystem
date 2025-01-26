@@ -1,0 +1,48 @@
+﻿@model IEnumerable<EStudentManagement.Web.Models.User>
+
+@{
+    ViewData["Title"] = "Manage Users";
+}
+
+<h2>Manage Users</h2>
+
+@if (TempData["success"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["success"]
+    </div>
+}
+
+@if (TempData["error"] != null)
+{
+    <div class="alert alert-danger">
+        @TempData["error"]
+    </div>
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Username</th>
+            <th>Email</th>
+            <th>Role</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model)
+        {
+            <tr>
+                <td>@user.Username</td>
+
+                <td>@user.Role</td>
+                <td>
+                    <a href="@Url.Action("EditUser", "Admin", new { id = user.Id })" class="btn btn-warning btn-sm">Edit</a>
+                    <a href="@Url.Action("ConfirmDeleteUser", "Admin", new { id = user.Id })" class="btn btn-danger btn-sm">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a href="@Url.Action("Index", "Admin")" class="btn btn-primary">Back to Dashboard</a>

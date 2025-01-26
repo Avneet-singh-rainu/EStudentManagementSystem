@@ -1,0 +1,17 @@
+﻿@model EStudentManagement.Web.Models.Student
+
+@{
+    ViewData["Title"] = "Confirm Delete";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<p>Are you sure you want to delete the student <strong>@Model.Name</strong>?</p>
+
+<form method="post">
+    <!-- Hidden field to pass the student ID to the controller -->
+    <input type="hidden" name="id" value="@Model.Id" />
+
+    <button asp-asp-controller="Admin" asp-action="Delete" type="submit" class="btn btn-danger">Yes, Delete</button>
+    <a href="@Url.Action("GetAllStudents", "Admin")" class="btn btn-secondary">No, Cancel</a>
+</form>

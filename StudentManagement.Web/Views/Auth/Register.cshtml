@@ -1,0 +1,36 @@
+﻿@model EStudentManagement.Web.Models.User
+
+@{
+    ViewData["Title"] = "Register";
+}
+
+<h2>Register</h2>
+
+<form method="post">
+    <div class="mb-3">
+        <label for="Username" class="form-label">Name</label>
+        <input type="text" class="form-control" id="Username" name="Username" placeholder="Enter your name" required />
+    </div>
+
+    <div class="mb-3">
+        <label for="Email" class="form-label">Email</label>
+        <input type="email" class="form-control" id="Email" name="Email" placeholder="Enter your email" required />
+    </div>
+
+    <div class="mb-3">
+        <label for="Password" class="form-label">Password</label>
+        <input type="password" class="form-control" id="Password" name="Password" placeholder="Enter your password" required />
+    </div>
+
+    <div class="mb-3">
+        <label for="Role" class="form-label">Role</label>
+        <select class="form-select" id="Role" name="Role" required>
+            <option value="Admin">Admin</option>
+            <option value="Student">Student</option>
+        </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Register</button>
+</form>
+
+<p>Already have an account? <a href="/Auth/Login">Login here</a></p>

@@ -1,0 +1,33 @@
+﻿@model IEnumerable<EStudentManagement.Web.Models.Student>
+
+@{
+    ViewData["Title"] = "All Students";
+}
+
+<h2>Students List</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Date of Birth</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var student in Model)
+        {
+            <tr>
+                <td>@student.Name</td>
+                <td>@student.Email</td>
+                <td>@student.DateOfBirth.ToString("yyyy-MM-dd")</td>
+                <td>
+                    <a href="@Url.Action("EditStudent", "Student", new { id = student.Id })" class="btn btn-warning btn-sm" style="width:80px">Edit</a>
+                    <a href="@Url.Action("StudentDetails", "Student", new { id = student.Id })" class="btn btn-dark btn-sm" style="width:80px">View</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

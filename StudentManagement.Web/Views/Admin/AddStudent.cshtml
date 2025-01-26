@@ -1,0 +1,38 @@
+﻿@model EStudentManagement.Web.Models.Student
+
+@{
+    ViewData["Title"] = "Add Student";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<form method="post" asp-action="AddStudent">
+    <div class="form-group">
+        <label asp-for="Name" class="control-label"></label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="DateOfBirth" class="control-label"></label>
+        <input asp-for="DateOfBirth" type="date" class="form-control" />
+        <span asp-validation-for="DateOfBirth" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Email" class="control-label"></label>
+        <input asp-for="Email" class="form-control" />
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Add Student</button>
+</form>
+
+<br />
+<a href="@Url.Action("GetAllStudents", "Admin")">Back to Student List</a>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
