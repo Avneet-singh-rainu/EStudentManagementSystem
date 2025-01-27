@@ -55,7 +55,21 @@ namespace StudentManagement.Web.Controllers {
                 var token = jwtService.GenerateToken(obj);
                 ViewBag.user = obj.Username;
 
+                if (Request.Cookies.TryGetValue("jwtToken", out string jwtToken)) {
+                    Console.WriteLine(jwtToken + "...................");
+                }
 
+                Response.Cookies.Append("jwtToken", token, new CookieOptions {
+                    HttpOnly = false, // Allow JavaScript access
+                    Secure = true,
+                    SameSite = SameSiteMode.Strict,
+                    Expires = DateTime.UtcNow.AddHours(0.1)
+                });
+
+
+                if (Request.Cookies.TryGetValue("jwtToken", out jwtToken)) {
+                    Console.WriteLine(jwtToken + "...................");
+                }
                 HttpContext.Session.SetString("Username", obj.Username);
                 HttpContext.Session.SetString("Role", obj.Role);
 
