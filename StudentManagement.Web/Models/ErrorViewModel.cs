@@ -1,4 +1,4 @@
-namespace StudentManagement.Web.Models {
+namespace EStudentManagement.Web.Models {
 
     public class ErrorViewModel {
         public string? RequestId { get; set; }

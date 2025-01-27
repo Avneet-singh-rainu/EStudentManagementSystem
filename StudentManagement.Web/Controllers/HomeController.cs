@@ -1,8 +1,8 @@
 using System.Diagnostics;
+using EStudentManagement.Web.Models;
 using Microsoft.AspNetCore.Mvc;
-using StudentManagement.Web.Models;
 
-namespace StudentManagement.Web.Controllers {
+namespace EStudentManagement.Web.Controllers {
 
     public class HomeController : Controller {
         private readonly ILogger<HomeController> _logger;
