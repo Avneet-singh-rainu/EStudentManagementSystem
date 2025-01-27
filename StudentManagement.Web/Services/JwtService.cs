@@ -14,9 +14,7 @@ namespace EStudentManagement.Web.Services {
         }
 
         public string GenerateToken(User user) {
-
             Console.WriteLine("jwt" + user.Username + user.Role + "..............");
-
 
             var claims = new[]{
             new Claim(ClaimTypes.Name, user.Username),

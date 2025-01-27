@@ -1,5 +1,7 @@
 ﻿namespace EStudentManagement.Web.Middlewares {
+
     using System.Threading.Tasks;
+
     // File: Middleware/SessionMiddleware.cs
     using Microsoft.AspNetCore.Http;
 
@@ -16,5 +18,4 @@
             await _next(httpContext);
         }
     }
-
 }

@@ -2,7 +2,9 @@
 using Microsoft.AspNetCore.Mvc.Filters;
 
 namespace EStudentManagement.Web.Filters {
+
     public class JwtAuthorizeAttribute : AuthorizeAttribute, IAuthorizationFilter {
+
         public void OnAuthorization(AuthorizationFilterContext context) {
             var token = context.HttpContext.Request.Headers["Authorization"].FirstOrDefault()?.Split(" ").Last();
 

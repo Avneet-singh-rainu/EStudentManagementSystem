@@ -1,7 +1,7 @@
-﻿using EStudentManagement.Web.Models;
+﻿using EStudentManagement.DataAccess.Data;
+using EStudentManagement.Web.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using StudentManagement.Web.Data;
 
 namespace EStudentManagement.Web.Controllers {
 

@@ -1,5 +1,4 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using EStudentManagement.Web.Filters;
 
 namespace EStudentManagement.Web.Models {
 
@@ -15,7 +14,6 @@ namespace EStudentManagement.Web.Models {
         [EmailAddress(ErrorMessage = "Invalid email address")]
         public string Email { get; set; } = "";
 
-        [DateOfBirthValidation]
         public DateTime DateOfBirth { get; set; }
     }
 }

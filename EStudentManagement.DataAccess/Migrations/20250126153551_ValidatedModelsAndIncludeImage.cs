@@ -2,14 +2,13 @@
 
 #nullable disable
 
-namespace StudentManagement.Web.Migrations
-{
+namespace EStudentManagement.DataAccess.Migrations {
+
     /// <inheritdoc />
-    public partial class ValidatedModelsAndIncludeImage : Migration
-    {
+    public partial class ValidatedModelsAndIncludeImage : Migration {
+
         /// <inheritdoc />
-        protected override void Up(MigrationBuilder migrationBuilder)
-        {
+        protected override void Up(MigrationBuilder migrationBuilder) {
             migrationBuilder.AlterColumn<string>(
                 name: "Username",
                 table: "Users",
@@ -45,8 +44,7 @@ namespace StudentManagement.Web.Migrations
         }
 
         /// <inheritdoc />
-        protected override void Down(MigrationBuilder migrationBuilder)
-        {
+        protected override void Down(MigrationBuilder migrationBuilder) {
             migrationBuilder.DropColumn(
                 name: "Image",
                 table: "Users");

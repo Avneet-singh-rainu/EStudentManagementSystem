@@ -2,7 +2,7 @@
 
 #nullable disable
 
-namespace StudentManagement.Web.Migrations {
+namespace EStudentManagement.DataAccess.Migrations {
 
     /// <inheritdoc />
     public partial class initial : Migration {

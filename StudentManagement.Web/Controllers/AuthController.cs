@@ -1,8 +1,8 @@
-﻿using EStudentManagement.Web.Models;
+﻿using EStudentManagement.DataAccess.Data;
+using EStudentManagement.Web.Models;
 using EStudentManagement.Web.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using StudentManagement.Web.Data;
 
 namespace StudentManagement.Web.Controllers {
 
@@ -65,7 +65,6 @@ namespace StudentManagement.Web.Controllers {
                     SameSite = SameSiteMode.Strict,
                     Expires = DateTime.UtcNow.AddHours(0.1)
                 });
-
 
                 if (Request.Cookies.TryGetValue("jwtToken", out jwtToken)) {
                     Console.WriteLine(jwtToken + "...................");

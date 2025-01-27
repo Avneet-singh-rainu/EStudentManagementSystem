@@ -5,7 +5,6 @@ namespace EStudentManagement.Web.Models {
     public class User {
         public int Id { get; set; }
 
-
         [Required(ErrorMessage = "Name is required")]
         [StringLength(50, ErrorMessage = "Name cannot exceed 50 characters")]
         [RegularExpression("^[a-zA-Z]+( [a-zA-Z]+)*$", ErrorMessage = "Name must contain only letters and single spaces between words.")]
@@ -21,6 +20,5 @@ namespace EStudentManagement.Web.Models {
         public string Role { get; set; }
 
         public string? Image { get; set; }
-
     }
 }

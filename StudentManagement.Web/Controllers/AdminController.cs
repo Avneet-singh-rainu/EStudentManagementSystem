@@ -1,7 +1,7 @@
-﻿using EStudentManagement.Web.Models;
+﻿using EStudentManagement.DataAccess.Data;
+using EStudentManagement.Web.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using StudentManagement.Web.Data;
 
 namespace StudentManagement.Web.Controllers {
 
@@ -106,7 +106,6 @@ namespace StudentManagement.Web.Controllers {
             return View(student);
         }
 
-
         [HttpGet]
         public async Task<IActionResult> ConfirmDelete(int id) {
             var student = await _context.Students.FirstOrDefaultAsync(s => s.Id == id);
@@ -137,6 +136,5 @@ namespace StudentManagement.Web.Controllers {
             TempData["success"] = "Student deleted successfully!";
             return RedirectToAction("GetAllStudents");  // Redirect back to the list of students
         }
-
     }
 }

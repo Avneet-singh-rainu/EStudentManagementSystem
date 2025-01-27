@@ -1,10 +1,10 @@
 using System.Text;
+using EStudentManagement.DataAccess.Data;
 using EStudentManagement.Web.Middlewares;
 using EStudentManagement.Web.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
-using StudentManagement.Web.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 

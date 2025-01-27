@@ -1,7 +1,7 @@
 ﻿using EStudentManagement.Web.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace StudentManagement.Web.Data {
+namespace EStudentManagement.DataAccess.Data {
 
     public class ApplicationDbContext : DbContext {
 
